@@ -403,6 +403,20 @@
             color: #bdbdbd;
         }
         
+        .health-worker-details {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .health-worker-details h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .telemedicine-container {
@@ -460,7 +474,7 @@
     
     <nav class="main-nav">
         <a href="#symptom-checker" data-translate="nav_symptom_checker">Symptom Checker</a>
-        <a href="#telemedicine" data-translate="nav_telemedicine">Telemedicine</a>
+        <a href="#find-health-worker" data-translate="nav_telemedicine">Telemedicine</a>
         <a href="#diagnostics" data-translate="nav_diagnostics">Diagnostics</a>
         <a href="#alerts" data-translate="nav_alerts">Health Alerts</a>
         <a href="#offline" data-translate="nav_offline">Offline Access</a>
@@ -501,9 +515,10 @@
         
         <section id="symptom-checker" class="symptom-checker">
             <h2 data-translate="symptom_checker_title">Symptom Checker</h2>
+            <
             <div class="input-group">
                 <label for="symptoms" data-translate="symptom_label">Describe your symptoms</label>
-                <textarea id="symptoms" data-translate="symptom_placeholder" placeholder="Example: I have fever, headache and body pain since yesterday"></textarea>
+                <textarea id="symptoms" data-translate="symptom_placeholder" placeholder="Example: I have a headache"></textarea>
                 <div class="voice-input">
                     <button id="voice-btn"><i class="fas fa-microphone"></i></button>
                     <span data-translate="voice_input">Or use voice input</span>
@@ -521,11 +536,9 @@
             
             <div class="result" id="result">
                 <h3 data-translate="result_conditions">Possible Conditions</h3>
-                <p id="condition-result" data-translate="condition_result">Based on your symptoms, you might have: <strong>Viral Fever</strong></p>
+                <p id="condition-result" data-translate="condition_result"></p>
                 <h3 data-translate="result_action">Recommended Action</h3>
-                <p id="action-result" data-translate="action_result">1. Rest and drink plenty of fluids<br>
-                2. Take paracetamol for fever (500mg every 6 hours)<br>
-                3. Consult a doctor if symptoms persist beyond 3 days</p>
+                <p id="action-result" data-translate="action_result"></p>
                 <h3 data-translate="result_healthcare">Nearby Healthcare</h3>
                 <p id="healthcare-result" data-translate="healthcare_result">Nearest ASHA worker: <strong>Rekha Devi</strong> (500m away)<br>
                 Contact: 98765XXXXX<br>
@@ -536,7 +549,7 @@
         
         <h2 class="section-title" data-translate="how_it_works">How GramHealth Works</h2>
         
-        <section class="telemedicine">
+        <section id="find-health-worker" class="telemedicine">
             <div class="container telemedicine-container">
                 <div class="telemedicine-content">
                     <h2 data-translate="telemedicine_title">Telemedicine with Local Health Workers</h2>
@@ -547,7 +560,15 @@
                         <li data-translate="telemedicine_feature_3">E-prescriptions sent via SMS</li>
                         <li data-translate="telemedicine_feature_4">Integrated with Ayushman Bharat</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" data-translate="find_health_worker">Find Nearest Health Worker</a>
+                    <button class="btn btn-primary" id="show-health-worker" data-translate="find_health_worker">Find Nearest Health Worker</button>
+                    <div class="health-worker-details" id="health-worker-details">
+                        <h3>Health Worker Details</h3>
+                        <p><strong>Name:</strong> Rekha Devi</p>
+                        <p><strong>Role:</strong> ASHA Worker</p>
+                        <p><strong>Location:</strong> 500m from your location</p>
+                        <p><strong>Contact:</strong> 98765XXXXX</p>
+                        <p><strong>Availability:</strong> 9AM - 5PM, Monday to Saturday</p>
+                    </div>
                 </div>
                 <div class="telemedicine-image">
                     <img src="https://via.placeholder.com/600x400" alt="Telemedicine with health worker">
@@ -688,14 +709,14 @@
                 feature_diagnostic_text: "Low-cost tests starting at ₹50 with our network of local diagnostic centers",
                 symptom_checker_title: "Symptom Checker",
                 symptom_label: "Describe your symptoms",
-                symptom_placeholder: "Example: I have fever, headache and body pain since yesterday",
+                symptom_placeholder: "Example: I have a headache",
                 voice_input: "Or use voice input",
                 language_label: "Preferred Language",
                 check_symptoms: "Check Symptoms",
                 result_conditions: "Possible Conditions",
-                condition_result: "Based on your symptoms, you might have: <strong>Viral Fever</strong>",
+                condition_result: "",
                 result_action: "Recommended Action",
-                action_result: "1. Rest and drink plenty of fluids<br>2. Take paracetamol for fever (500mg every 6 hours)<br>3. Consult a doctor if symptoms persist beyond 3 days",
+                action_result: "",
                 result_healthcare: "Nearest ASHA worker: <strong>Rekha Devi</strong> (500m away)<br>Contact: 98765XXXXX<br>Next available teleconsultation: Today 4PM",
                 book_consultation: "Book Teleconsultation",
                 how_it_works: "How GramHealth Works",
@@ -770,14 +791,14 @@
                 feature_diagnostic_text: "स्थानीय निदान केंद्रों के हमारे नेटवर्क के साथ ₹50 से शुरू होने वाले कम लागत वाले टेस्ट",
                 symptom_checker_title: "लक्षण जांच",
                 symptom_label: "अपने लक्षणों का वर्णन करें",
-                symptom_placeholder: "उदाहरण: मुझे कल से बुखार, सिरदर्द और शरीर में दर्द है",
+                symptom_placeholder: "उदाहरण: मुझे सिरदर्द है",
                 voice_input: "या आवाज़ इनपुट का उपयोग करें",
                 language_label: "पसंदीदा भाषा",
                 check_symptoms: "लक्षण जांचें",
                 result_conditions: "संभावित स्थिति",
-                condition_result: "आपके लक्षणों के आधार पर, आपको हो सकता है: <strong>वायरल बुखार</strong>",
+                condition_result: "",
                 result_action: "अनुशंसित कार्रवाई",
-                action_result: "1. आराम करें और खूब तरल पदार्थ पिएं<br>2. बुखार के लिए पैरासिटामोल लें (500 मिलीग्राम हर 6 घंटे में)<br>3. यदि लक्षण 3 दिनों से अधिक समय तक रहें तो डॉक्टर से परामर्श करें",
+                action_result: "",
                 result_healthcare: "निकटतम आशा कार्यकर्ता: <strong>रेखा देवी</strong> (500 मीटर दूर)<br>संपर्क: 98765XXXXX<br>अगला उपलब्ध टेलीकंसल्टेशन: आज शाम 4 बजे",
                 book_consultation: "टेलीकंसल्टेशन बुक करें",
                 how_it_works: "ग्रामहेल्थ कैसे काम करता है",
@@ -852,14 +873,14 @@
                 feature_diagnostic_text: "ನಮ್ಮ ಸ್ಥಳೀಯ ರೋಗನಿರ್ಣಯ ಕೇಂದ್ರಗಳ ಜಾಲದೊಂದಿಗೆ ₹50 ರಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಕಡಿಮೆ ವೆಚ್ಚದ ಪರೀಕ್ಷೆಗಳು",
                 symptom_checker_title: "ಲಕ್ಷಣ ಪರಿಶೀಲನೆ",
                 symptom_label: "ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸಿ",
-                symptom_placeholder: "ಉದಾಹರಣೆ: ನನಗೆ ನಿನ್ನೆಯಿಂದ ಜ್ವರ, ತಲೆನೋವು ಮತ್ತು ದೇಹ ನೋವು ಇದೆ",
+                symptom_placeholder: "ಉದಾಹರಣೆ: ನನಗೆ ತಲೆನೋವು ಇದೆ",
                 voice_input: "ಅಥವಾ ಧ್ವನಿ ಇನ್‌ಪುಟ್ ಬಳಸಿ",
                 language_label: "ಆದ್ಯತೆಯ ಭಾಷೆ",
                 check_symptoms: "ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ",
                 result_conditions: "ಸಂಭಾವ್ಯ ಸ್ಥಿತಿಗಳು",
-                condition_result: "ನಿಮ್ಮ ಲಕ್ಷಣಗಳ ಆಧಾರದ ಮೇಲೆ, ನೀವು ಹೊಂದಿರಬಹುದು: <strong>ವೈರಲ್ ಜ್ವರ</strong>",
+                condition_result: "",
                 result_action: "ಶಿಫಾರಸು ಮಾಡಲಾದ ಕ್ರಿಯೆ",
-                action_result: "1. ವಿಶ್ರಾಂತಿ ಪಡೆಯಿರಿ ಮತ್ತು ಸಾಕಷ್ಟು ದ್ರವಗಳನ್ನು ಕುಡಿಯಿರಿ<br>2. ಜ್ವರಕ್ಕೆ ಪಾರಾಸಿಟಮಾಲ್ ತೆಗೆದುಕೊಳ್ಳಿ (500 ಮಿಗ್ರಾಂ ಪ್ರತಿ 6 ಗಂಟೆಗೊಮ್ಮೆ)<br>3. ಲಕ್ಷಣಗಳು 3 ದಿನಗಳಿಗಿಂತ ಹೆಚ್ಚು ಕಾಲ ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ",
+                action_result: "",
                 result_healthcare: "ಹತ್ತಿರದ ಆಶಾ ಕಾರ್ಯಕರ್ತೆ: <strong>ರೇಖಾ ದೇವಿ</strong> (500 ಮೀ ದೂರದಲ್ಲಿ)<br>ಸಂಪರ್ಕ: 98765XXXXX<br>ಮುಂದಿನ ಲಭ್ಯ ಟೆಲಿಕನ್ಸಲ್ಟೇಶನ್: ಇಂದು ಸಂಜೆ 4 ಗಂಟೆಗೆ",
                 book_consultation: "ಟೆಲಿಕನ್ಸಲ್ಟೇಶನ್ ಬುಕ್ ಮಾಡಿ",
                 how_it_works: "ಗ್ರಾಮಹೆಲ್ತ್ ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
@@ -897,7 +918,7 @@
                 alert_3_text: "ಮುಂದಿನ ವಾರ ತೀವ್ರ ಬಿಸಿಲು ನಿರೀಕ್ಷಿತವಾಗಿದೆ. ಹೈಡ್ರೇಟೆಡ್ ಆಗಿರಿ ಮತ್ತು ಬೆಳಿಗ್ಗೆ 11 ರಿಂದ ಸಂಜೆ 4 ರವರೆಗೆ ಸೂರ್ಯನ ಬೆಳಕನ್ನು ತಪ್ಪಿಸಿ。",
                 subscribe_alerts: "ಎಸ್‌ಎಂಎಸ್ ಎಚ್ಚರಿಕೆಗಳಿಗೆ ಚಂದಾದಾರರಾಗಿ",
                 offline_title: "ಇಂಟರ್ನೆಟ್ ಇಲ್ಲದೆ ಗ್ರಾಮಹೆಲ್ತ್ ಅನ್ನು ಪ್ರವೇಶಿಸಿ",
-                offline_text: "ಸ್ಮಾರ್ಟ್‌ಫೋನ್ ಅಥವಾ ಇಂಟರ್ನೆಟ್ ಇಲ್ಲದೆಯೇ ಆರೋಗ್ಯ ಮಾಹಿತಿ ಮತ್ತು ಸೇವೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ನಾವು ಬಹು ವಿಧಾನಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ",
+                offline_text: "ಸ್ಮಾರ್ಟ್‌ಫೋನ್ ಅಥವಾ ಇಂಟರನೆಟ್ ಇಲ್ಲದೆಯೇ ಆರೋಗ್ಯ ಮಾಹಿತಿ ಮತ್ತು ಸೇವೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ನಾವು ಬಹು ವಿಧಾನಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ",
                 sms_service_title: "ಎಸ್‌ಎಂಎಸ್ ಸೇವೆ",
                 sms_service_text: "ಮೆನುಗಾಗಿ 56161 ಕ್ಕೆ HEALTH ಕಳುಹಿಸಿ",
                 ivr_service_title: "ಐವಿಆರ್ ಹೆಲ್ಪ್‌ಲೈನ್",
@@ -912,6 +933,35 @@
                 footer_copyright: "© 2023 ಗ್ರಾಮಹೆಲ್ತ್. ಗ್ರಾಮೀಣ ಭಾರತಕ್ಕಾಗಿ ಅಭಿವೃದ್ಧಿಪಡಿಸಲಾಗಿದೆ。",
                 voice_alert: "ಧ್ವನಿ ಇನ್‌ಪುಟ್ ಸೆರೆಹಿಡಿಯಲಾಗಿದೆ. ಅಗತ್ಯವಿದ್ದರೆ ನೀವು ಪಠ್ಯವನ್ನು ಸಂಪಾದಿಸಬಹುದು。",
                 consultation_alert: "ಟೆಲಿಕನ್ಸಲ್ಟೇಶನ್ ಬುಕ್ ಆಗಿದೆ! ಶೀಘ್ರದಲ್ಲೇ ವಿವರಗಳೊಂದಿಗೆ ನೀವು ಎಸ್‌ಎಂಎಸ್ ಪಡೆಯುವಿರಿ."
+            }
+        };
+
+        // Symptom-specific responses
+        const symptomResponses = {
+            headache: {
+                condition: "Possible Tension Headache or Migraine",
+                action: "1. Rest in a quiet, dark room<br>2. Stay hydrated<br>3. Apply a warm or cool compress to your forehead<br>4. Consult a doctor if headache persists beyond 2 days",
+                medication: "Take Ibuprofen (200-400mg every 6 hours as needed, max 3200mg/day) or Paracetamol (500mg every 6 hours, max 4g/day). Do not exceed recommended dose."
+            },
+            fever: {
+                condition: "Possible Viral Fever",
+                action: "1. Rest and drink plenty of fluids<br>2. Keep cool with light clothing<br>3. Monitor temperature regularly<br>4. Consult a doctor if fever exceeds 102°F or persists beyond 3 days",
+                medication: "Take Paracetamol (500mg every 6 hours, max 4g/day). Avoid overdosing."
+            },
+            cold: {
+                condition: "Possible Common Cold",
+                action: "1. Rest and stay hydrated<br>2. Use saline nasal drops for congestion<br>3. Gargle with warm salt water for sore throat<br>4. Consult a doctor if symptoms worsen or last beyond 7 days",
+                medication: "Take Cetirizine (10mg once daily) for runny nose and Paracetamol (500mg every 6 hours, max 4g/day) for fever or body ache."
+            },
+            "stomach pain": {
+                condition: "Possible Gastritis or Indigestion",
+                action: "1. Avoid spicy or oily foods<br>2. Eat small, frequent meals<br>3. Stay upright after eating<br>4. Consult a doctor if pain is severe or accompanied by vomiting",
+                medication: "Take Pantoprazole (40mg once daily before breakfast) and Antacid syrup (10ml after meals as needed)."
+            },
+            "period pain": {
+                condition: "Possible Dysmenorrhea",
+                action: "1. Apply a heating pad to lower abdomen<br>2. Stay hydrated<br>3. Do light stretching or walking<br>4. Consult a doctor if pain is unbearable or disrupts daily activities",
+                medication: "Take Mefenamic Acid (500mg every 8 hours as needed, max 3 days) or Ibuprofen (200-400mg every 6 hours, max 3200mg/day)."
             }
         };
 
@@ -946,17 +996,30 @@
             const langSelect = document.getElementById('language-select');
             langSelect.addEventListener('change', (e) => {
                 updateLanguage(e.target.value);
-                alert(translations[currentLang].lang_changed || `Language changed to ${e.target.options[e.target.selectedIndex].text}`);
+                alert(`Language changed to ${e.target.options[e.target.selectedIndex].text}`);
             });
 
             // Symptom checker
             document.getElementById('check-symptoms').addEventListener('click', function() {
+                const symptomsInput = document.getElementById('symptoms').value.toLowerCase();
+                let response = symptomResponses.headache; // Default response
+                if (symptomsInput.includes('fever')) {
+                    response = symptomResponses.fever;
+                } else if (symptomsInput.includes('cold') || symptomsInput.includes('runny nose')) {
+                    response = symptomResponses.cold;
+                } else if (symptomsInput.includes('stomach pain') || symptomsInput.includes('abdominal pain')) {
+                    response = symptomResponses['stomach pain'];
+                } else if (symptomsInput.includes('period pain') || symptomsInput.includes('menstrual pain')) {
+                    response = symptomResponses['period pain'];
+                }
+
+                document.getElementById('condition-result').innerHTML = response.condition;
+                document.getElementById('action-result').innerHTML = `${response.action}<br><strong>Medication:</strong> ${response.medication}`;
                 document.getElementById('result').style.display = 'block';
                 document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
-                const conditionText = translations[currentLang].condition_result;
-                const actionText = translations[currentLang].action_result;
-                const healthcareText = translations[currentLang].healthcare_result;
-                speakText(`${conditionText}. ${actionText}. ${healthcareText}`);
+
+                const healthcareText = translations[currentLang].result_healthcare;
+                speakText(`${response.condition}. ${response.action}. ${response.medication}. ${healthcareText}`);
             });
 
             // Voice input simulation
@@ -974,6 +1037,15 @@
             document.getElementById('book-consultation').addEventListener('click', function() {
                 alert(translations[currentLang].consultation_alert);
                 speakText(translations[currentLang].consultation_alert);
+            });
+
+            // Show health worker details
+            document.getElementById('show-health-worker').addEventListener('click', function() {
+                const details = document.getElementById('health-worker-details');
+                details.style.display = 'block';
+                details.scrollIntoView({ behavior: 'smooth' });
+                const message = "Nearest health worker details displayed.";
+                speakText(message);
             });
 
             // Diagnostic center buttons
