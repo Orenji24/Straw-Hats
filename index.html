@@ -438,11 +438,10 @@
             animation: pulse 1s infinite;
             background-color: var(--danger) !important;
         }
-
-        /* RTL support for Urdu */
-        .rtl {
-            direction: rtl;
-            text-align: right;
+        
+        /* Language-specific styles */
+        .lang-hi, .lang-kn {
+            font-family: Arial, sans-serif;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -452,35 +451,59 @@
         <div class="container">
             <div class="logo">
                 <img src="https://via.placeholder.com/40" alt="GramHealth Logo">
-                <span id="logo-text">GramHealth</span>
+                <span class="lang-en">GramHealth</span>
+                <span class="lang-hi" style="display:none;">ग्रामहेल्थ</span>
+                <span class="lang-kn" style="display:none;">ಗ್ರಾಮ್ ಹೆಲ್ತ್</span>
             </div>
             <div class="language-selector">
                 <select id="language-select">
                     <option value="en">English</option>
                     <option value="hi">हिंदी</option>
+                    <option value="kn">ಕನ್ನಡ</option>
                     <option value="bn">বাংলা</option>
                     <option value="ta">தமிழ்</option>
                     <option value="te">తెలుగు</option>
-                    <option value="kn">ಕನ್ನಡ</option>
                     <option value="mr">मराठी</option>
                 </select>
             </div>
         </div>
     </header>
     
-    <nav class="main-nav" id="main-nav">
-        <a href="#symptom-checker" data-i18n="nav.symptom">Symptom Checker</a>
-        <a href="#telemedicine" data-i18n="nav.telemedicine">Telemedicine</a>
-        <a href="#diagnostics" data-i18n="nav.diagnostics">Diagnostics</a>
-        <a href="#alerts" data-i18n="nav.alerts">Health Alerts</a>
-        <a href="#offline" data-i18n="nav.offline">Offline Access</a>
+    <nav class="main-nav">
+        <a href="#symptom-checker" class="lang-en">Symptom Checker</a>
+        <a href="#symptom-checker" class="lang-hi" style="display:none;">लक्षण जांच</a>
+        <a href="#symptom-checker" class="lang-kn" style="display:none;">ಲಕ್ಷಣ ಪರಿಶೀಲಕ</a>
+        
+        <a href="#telemedicine" class="lang-en">Telemedicine</a>
+        <a href="#telemedicine" class="lang-hi" style="display:none;">टेलीमेडिसिन</a>
+        <a href="#telemedicine" class="lang-kn" style="display:none;">ಟೆಲಿಮೆಡಿಸಿನ್</a>
+        
+        <a href="#diagnostics" class="lang-en">Diagnostics</a>
+        <a href="#diagnostics" class="lang-hi" style="display:none;">डायग्नोस्टिक्स</a>
+        <a href="#diagnostics" class="lang-kn" style="display:none;">ಡಯಾಗ್ನೋಸ್ಟಿಕ್ಸ್</a>
+        
+        <a href="#alerts" class="lang-en">Health Alerts</a>
+        <a href="#alerts" class="lang-hi" style="display:none;">स्वास्थ्य चेतावनी</a>
+        <a href="#alerts" class="lang-kn" style="display:none;">ಆರೋಗ್ಯ ಎಚ್ಚರಿಕೆಗಳು</a>
+        
+        <a href="#offline" class="lang-en">Offline Access</a>
+        <a href="#offline" class="lang-hi" style="display:none;">ऑफलाइन पहुंच</a>
+        <a href="#offline" class="lang-kn" style="display:none;">ಆಫ್ಲೈನ್ ಪ್ರವೇಶ</a>
     </nav>
     
     <section class="hero">
         <div class="container">
-            <h1 id="hero-title">Affordable Healthcare for Rural India</h1>
-            <p id="hero-subtitle">Access doctors, diagnostics, and health information in your local language, even without internet</p>
-            <a href="#symptom-checker" class="btn btn-primary" id="hero-cta">Check Symptoms Now</a>
+            <h1 class="lang-en">Affordable Healthcare for Rural India</h1>
+            <h1 class="lang-hi" style="display:none;">ग्रामीण भारत के लिए सस्ती स्वास्थ्य सेवा</h1>
+            <h1 class="lang-kn" style="display:none;">ಗ್ರಾಮೀಣ ಭಾರತಕ್ಕಾಗಿ ಸಾಧಾರಣ ಬೆಲೆಯ ಆರೋಗ್ಯ ಸೇವೆ</h1>
+            
+            <p class="lang-en">Access doctors, diagnostics, and health information in your local language, even without internet</p>
+            <p class="lang-hi" style="display:none;">डॉक्टरों, डायग्नोस्टिक्स और स्वास्थ्य जानकारी तक अपनी स्थानीय भाषा में पहुंचें, इंटरनेट के बिना भी</p>
+            <p class="lang-kn" style="display:none;">ವೈದ್ಯರು, ರೋಗನಿರ್ಣಯ ಮತ್ತು ಆರೋಗ್ಯ ಮಾಹಿತಿಗಳನ್ನು ನಿಮ್ಮ ಸ್ಥಳೀಯ ಭಾಷೆಯಲ್ಲಿ ಪ್ರವೇಶಿಸಿ, ಇಂಟರ್ನೆಟ್ ಇಲ್ಲದೆಯೂ</p>
+            
+            <a href="#symptom-checker" class="btn btn-primary lang-en">Check Symptoms Now</a>
+            <a href="#symptom-checker" class="btn btn-primary lang-hi" style="display:none;">अभी लक्षण जांचें</a>
+            <a href="#symptom-checker" class="btn btn-primary lang-kn" style="display:none;">ಈಗ ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ</a>
         </div>
     </section>
     
@@ -490,78 +513,162 @@
                 <div class="icon">
                     <i class="fas fa-language"></i>
                 </div>
-                <h3 data-i18n="features.language">Local Language Support</h3>
-                <p data-i18n="features.language-desc">Available in 10+ Indian languages with voice interaction for those who can't read</p>
+                <h3 class="lang-en">Local Language Support</h3>
+                <h3 class="lang-hi" style="display:none;">स्थानीय भाषा समर्थन</h3>
+                <h3 class="lang-kn" style="display:none;">ಸ್ಥಳೀಯ ಭಾಷೆ ಬೆಂಬಲ</h3>
+                
+                <p class="lang-en">Available in 10+ Indian languages with voice interaction for those who can't read</p>
+                <p class="lang-hi" style="display:none;">10+ भारतीय भाषाओं में उपलब्ध, जो पढ़ नहीं सकते उनके लिए आवाज संवाद</p>
+                <p class="lang-kn" style="display:none;">10+ ಭಾರತೀಯ ಭಾಷೆಗಳಲ್ಲಿ ಲಭ್ಯವಿದೆ, ಓದಲು ಸಾಧ್ಯವಾಗದವರಿಗೆ ಧ್ವನಿ ಸಂವಾದ</p>
             </div>
             <div class="feature-card">
                 <div class="icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3 data-i18n="features.offline">Works Without Internet</h3>
-                <p data-i18n="features.offline-desc">Access via USSD, SMS or offline app. No need for constant internet connection</p>
+                <h3 class="lang-en">Works Without Internet</h3>
+                <h3 class="lang-hi" style="display:none;">इंटरनेट के बिना काम करता है</h3>
+                <h3 class="lang-kn" style="display:none;">ಇಂಟರ್ನೆಟ್ ಇಲ್ಲದೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ</h3>
+                
+                <p class="lang-en">Access via USSD, SMS or offline app. No need for constant internet connection</p>
+                <p class="lang-hi" style="display:none;">यूएसएसडी, एसएमएस या ऑफलाइन ऐप के माध्यम से पहुंचें। निरंतर इंटरनेट कनेक्शन की आवश्यकता नहीं</p>
+                <p class="lang-kn" style="display:none;">USSD, SMS ಅಥವಾ ಆಫ್ಲೈನ್ ಅಪ್ಲಿಕೇಶನ್ ಮೂಲಕ ಪ್ರವೇಶಿಸಿ. ನಿರಂತರ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕದ ಅಗತ್ಯವಿಲ್ಲ</p>
             </div>
             <div class="feature-card">
                 <div class="icon">
                     <i class="fas fa-rupee-sign"></i>
                 </div>
-                <h3 data-i18n="features.affordable">Affordable Diagnostics</h3>
-                <p data-i18n="features.affordable-desc">Low-cost tests starting at ₹50 with our network of local diagnostic centers</p>
+                <h3 class="lang-en">Affordable Diagnostics</h3>
+                <h3 class="lang-hi" style="display:none;">सस्ती डायग्नोस्टिक्स</h3>
+                <h3 class="lang-kn" style="display:none;">ಸಾಧಾರಣ ಬೆಲೆಯ ರೋಗನಿರ್ಣಯ</h3>
+                
+                <p class="lang-en">Low-cost tests starting at ₹50 with our network of local diagnostic centers</p>
+                <p class="lang-hi" style="display:none;">स्थानीय डायग्नोस्टिक केंद्रों के हमारे नेटवर्क के साथ ₹50 से शुरू होने वाले कम लागत वाले परीक्षण</p>
+                <p class="lang-kn" style="display:none;">ಸ್ಥಳೀಯ ರೋಗನಿರ್ಣಯ ಕೇಂದ್ರಗಳ ನಮ್ಮ ನೆಟ್ವರ್ಕ್ನೊಂದಿಗೆ ₹50 ರಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಕಡಿಮೆ ವೆಚ್ಚದ ಪರೀಕ್ಷೆಗಳು</p>
             </div>
         </section>
         
         <section id="symptom-checker" class="symptom-checker">
-            <h2 data-i18n="symptom.title">Symptom Checker</h2>
+            <h2 class="lang-en">Symptom Checker</h2>
+            <h2 class="lang-hi" style="display:none;">लक्षण जांच</h2>
+            <h2 class="lang-kn" style="display:none;">ಲಕ್ಷಣ ಪರಿಶೀಲಕ</h2>
+            
             <div class="input-group">
-                <label for="symptoms" data-i18n="symptom.label">Describe your symptoms</label>
-                <textarea id="symptoms" data-i18n-placeholder="symptom.placeholder" placeholder="Example: I have fever, headache and body pain since yesterday"></textarea>
+                <label for="symptoms" class="lang-en">Describe your symptoms</label>
+                <label for="symptoms" class="lang-hi" style="display:none;">अपने लक्षणों का वर्णन करें</label>
+                <label for="symptoms" class="lang-kn" style="display:none;">ನಿಮ್ಮ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸಿ</label>
+                
+                <textarea id="symptoms" class="lang-en" placeholder="Example: I have fever, headache and body pain since yesterday"></textarea>
+                <textarea id="symptoms" class="lang-hi" style="display:none;" placeholder="उदाहरण: मुझे कल से बुखार, सिरदर्द और शरीर में दर्द है"></textarea>
+                <textarea id="symptoms" class="lang-kn" style="display:none;" placeholder="ಉದಾಹರಣೆ: ನನಗೆ ನಿನ್ನೆ ಮೊದಲು ಜ್ವರ, ತಲೆನೋವು ಮತ್ತು ದೇಹದ ನೋವು ಇದೆ"></textarea>
+                
                 <div class="voice-input">
                     <button id="voice-btn"><i class="fas fa-microphone"></i></button>
-                    <span data-i18n="symptom.voice">Or use voice input</span>
+                    <span class="lang-en">Or use voice input</span>
+                    <span class="lang-hi" style="display:none;">या आवाज इनपुट का उपयोग करें</span>
+                    <span class="lang-kn" style="display:none;">ಅಥವಾ ಧ್ವನಿ ಇನ್ಪುಟ್ ಬಳಸಿ</span>
                 </div>
             </div>
             <div class="input-group">
-                <label for="language" data-i18n="symptom.language">Preferred Language</label>
+                <label for="language" class="lang-en">Preferred Language</label>
+                <label for="language" class="lang-hi" style="display:none;">पसंदीदा भाषा</label>
+                <label for="language" class="lang-kn" style="display:none;">ಆದ್ಯತೆಯ ಭಾಷೆ</label>
+                
                 <select id="language">
                     <option value="en">English</option>
                     <option value="hi">हिंदी (Hindi)</option>
+                    <option value="kn">ಕನ್ನಡ (Kannada)</option>
                     <option value="bn">বাংলা (Bengali)</option>
                     <option value="ta">தமிழ் (Tamil)</option>
                     <option value="te">తెలుగు (Telugu)</option>
-                    <option value="kn">ಕನ್ನಡ (Kannada)</option>
                     <option value="mr">मराठी (Marathi)</option>
                 </select>
             </div>
-            <button class="btn btn-primary" id="check-symptoms" data-i18n="symptom.button">Check Symptoms</button>
+            <button class="btn btn-primary" id="check-symptoms" class="lang-en">Check Symptoms</button>
+            <button class="btn btn-primary" id="check-symptoms" class="lang-hi" style="display:none;">लक्षण जांचें</button>
+            <button class="btn btn-primary" id="check-symptoms" class="lang-kn" style="display:none;">ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ</button>
             
             <div class="result" id="result">
-                <h3 data-i18n="result.condition">Possible Conditions</h3>
-                <p id="condition-result">Based on your symptoms, you might have: <strong>Viral Fever</strong></p>
-                <h3 data-i18n="result.action">Recommended Action</h3>
-                <p id="action-result">1. Rest and drink plenty of fluids<br>
+                <h3 class="lang-en">Possible Conditions</h3>
+                <h3 class="lang-hi" style="display:none;">संभावित स्थितियां</h3>
+                <h3 class="lang-kn" style="display:none;">ಸಂಭಾವ್ಯ ಸ್ಥಿತಿಗಳು</h3>
+                
+                <p id="condition-result" class="lang-en">Based on your symptoms, you might have: <strong>Viral Fever</strong></p>
+                <p id="condition-result" class="lang-hi" style="display:none;">आपके लक्षणों के आधार पर, आपको हो सकता है: <strong>वायरल बुखार</strong></p>
+                <p id="condition-result" class="lang-kn" style="display:none;">ನಿಮ್ಮ ಲಕ್ಷಣಗಳ ಆಧಾರದ ಮೇಲೆ, ನೀವು ಹೊಂದಿರಬಹುದು: <strong>ವೈರಲ್ ಜ್ವರ</strong></p>
+                
+                <h3 class="lang-en">Recommended Action</h3>
+                <h3 class="lang-hi" style="display:none;">अनुशंसित कार्रवाई</h3>
+                <h3 class="lang-kn" style="display:none;">ಶಿಫಾರಸು ಮಾಡಿದ ಕ್ರಮ</h3>
+                
+                <p id="action-result" class="lang-en">1. Rest and drink plenty of fluids<br>
                 2. Take paracetamol for fever (500mg every 6 hours)<br>
                 3. Consult a doctor if symptoms persist beyond 3 days</p>
-                <h3 data-i18n="result.healthcare">Nearby Healthcare</h3>
-                <p id="healthcare-result">Nearest ASHA worker: <strong>Rekha Devi</strong> (500m away)<br>
+                
+                <p id="action-result" class="lang-hi" style="display:none;">1. आराम करें और खूब सारा तरल पदार्थ पिएं<br>
+                2. बुखार के लिए पैरासिटामोल लें (500mg हर 6 घंटे में)<br>
+                3. यदि लक्षण 3 दिनों से अधिक समय तक बने रहें तो डॉक्टर से परामर्श करें</p>
+                
+                <p id="action-result" class="lang-kn" style="display:none;">1. ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊಳ್ಳಿ ಮತ್ತು ಸಾಕಷ್ಟು ದ್ರವಗಳನ್ನು ಕುಡಿಯಿರಿ<br>
+                2. ಜ್ವರಕ್ಕೆ ಪ್ಯಾರಾಸಿಟಮಾಲ್ ತೆಗೆದುಕೊಳ್ಳಿ (500mg ಪ್ರತಿ 6 ಗಂಟೆಗಳಿಗೊಮ್ಮೆ)<br>
+                3. ಲಕ್ಷಣಗಳು 3 ದಿನಗಳಿಗಿಂತ ಹೆಚ್ಚು ಕಾಲ ಉಳಿದಿದ್ದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ</p>
+                
+                <h3 class="lang-en">Nearby Healthcare</h3>
+                <h3 class="lang-hi" style="display:none;">नजदीकी स्वास्थ्य सेवा</h3>
+                <h3 class="lang-kn" style="display:none;">ಹತ್ತಿರದ ಆರೋಗ್ಯ ಸೇವೆ</h3>
+                
+                <p id="healthcare-result" class="lang-en">Nearest ASHA worker: <strong>Rekha Devi</strong> (500m away)<br>
                 Contact: 98765XXXXX<br>
                 Next available teleconsultation: Today 4PM</p>
-                <button class="btn" id="book-consultation" data-i18n="result.consult">Book Teleconsultation</button>
+                
+                <p id="healthcare-result" class="lang-hi" style="display:none;">निकटतम आशा कार्यकर्ता: <strong>रेखा देवी</strong> (500m दूर)<br>
+                संपर्क: 98765XXXXX<br>
+                अगली उपलब्ध टेलीकंसल्टेशन: आज शाम 4 बजे</p>
+                
+                <p id="healthcare-result" class="lang-kn" style="display:none;">ಹತ್ತಿರದ ASHA ಕಾರ್ಯಕರ್ತ: <strong>ರೇಖಾ ದೇವಿ</strong> (500m ದೂರ)<br>
+                ಸಂಪರ್ಕ: 98765XXXXX<br>
+                ಮುಂದಿನ ಲಭ್ಯವಿರುವ ಟೆಲಿಕನ್ಸಲ್ಟೇಶನ್: ಇಂದು ಸಂಜೆ 4 ಗಂಟೆಗೆ</p>
+                
+                <button class="btn" id="book-consultation" class="lang-en">Book Teleconsultation</button>
+                <button class="btn" id="book-consultation" class="lang-hi" style="display:none;">टेलीकंसल्टेशन बुक करें</button>
+                <button class="btn" id="book-consultation" class="lang-kn" style="display:none;">ಟೆಲಿಕನ್ಸಲ್ಟೇಶನ್ ಬುಕ್ ಮಾಡಿ</button>
             </div>
         </section>
         
-        <h2 class="section-title" data-i18n="how.title">How GramHealth Works</h2>
+        <h2 class="section-title lang-en">How GramHealth Works</h2>
+        <h2 class="section-title lang-hi" style="display:none;">ग्रामहेल्थ कैसे काम करता है</h2>
+        <h2 class="section-title lang-kn" style="display:none;">ಗ್ರಾಮ್ ಹೆಲ್ತ್ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</h2>
         
         <section class="telemedicine">
             <div class="container telemedicine-container">
                 <div class="telemedicine-content">
-                    <h2 data-i18n="tele.title">Telemedicine with Local Health Workers</h2>
-                    <p data-i18n="tele.desc">Our network of trained ASHA and ANM workers can help you connect with doctors via video or phone call, even in remote areas.</p>
+                    <h2 class="lang-en">Telemedicine with Local Health Workers</h2>
+                    <h2 class="lang-hi" style="display:none;">स्थानीय स्वास्थ्य कार्यकर्ताओं के साथ टेलीमेडिसिन</h2>
+                    <h2 class="lang-kn" style="display:none;">ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ಕಾರ್ಯಕರ್ತರೊಂದಿಗೆ ಟೆಲಿಮೆಡಿಸಿನ್</h2>
+                    
+                    <p class="lang-en">Our network of trained ASHA and ANM workers can help you connect with doctors via video or phone call, even in remote areas.</p>
+                    <p class="lang-hi" style="display:none;">प्रशिक्षित आशा और एएनएम कार्यकर्ताओं का हमारा नेटवर्क आपको डॉक्टरों से वीडियो या फोन कॉल के माध्यम से जोड़ने में मदद कर सकता है, यहां तक कि दूरदराज के इलाकों में भी।</p>
+                    <p class="lang-kn" style="display:none;">ಪ್ರಶಿಕ್ಷಿತ ASHA ಮತ್ತು ANM ಕಾರ್ಯಕರ್ತರ ನಮ್ಮ ನೆಟ್ವರ್ಕ್ ನಿಮಗೆ ವೈದ್ಯರೊಂದಿಗೆ ವೀಡಿಯೊ ಅಥವಾ ಫೋನ್ ಕಾಲ್ ಮೂಲಕ ಸಂಪರ್ಕಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ, ದೂರದ ಪ್ರದೇಶಗಳಲ್ಲಿ ಸಹ.</p>
+                    
                     <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li data-i18n="tele.bullet1">Available in your local language</li>
-                        <li data-i18n="tele.bullet2">Basic health checks done by the worker</li>
-                        <li data-i18n="tele.bullet3">E-prescriptions sent via SMS</li>
-                        <li data-i18n="tele.bullet4">Integrated with Ayushman Bharat</li>
+                        <li class="lang-en">Available in your local language</li>
+                        <li class="lang-hi" style="display:none;">आपकी स्थानीय भाषा में उपलब्ध</li>
+                        <li class="lang-kn" style="display:none;">ನಿಮ್ಮ ಸ್ಥಳೀಯ ಭಾಷೆಯಲ್ಲಿ ಲಭ್ಯವಿದೆ</li>
+                        
+                        <li class="lang-en">Basic health checks done by the worker</li>
+                        <li class="lang-hi" style="display:none;">कार्यकर्ता द्वारा किए गए बुनियादी स्वास्थ्य जांच</li>
+                        <li class="lang-kn" style="display:none;">ಕಾರ್ಯಕರ್ತನಿಂದ ಮಾಡಲಾದ ಮೂಲ ಆರೋಗ್ಯ ಪರಿಶೀಲನೆಗಳು</li>
+                        
+                        <li class="lang-en">E-prescriptions sent via SMS</li>
+                        <li class="lang-hi" style="display:none;">एसएमएस के माध्यम से भेजे गए ई-प्रिस्क्रिप्शन</li>
+                        <li class="lang-kn" style="display:none;">SMS ಮೂಲಕ ಕಳುಹಿಸಲಾದ ಇ-ಪ್ರಿಸ್ಕ್ರಿಪ್ಷನ್ಗಳು</li>
+                        
+                        <li class="lang-en">Integrated with Ayushman Bharat</li>
+                        <li class="lang-hi" style="display:none;">आयुष्मान भारत के साथ एकीकृत</li>
+                        <li class="lang-kn" style="display:none;">ಆಯುಷ್ಮಾನ್ ಭಾರತದೊಂದಿಗೆ ಸಂಯೋಜಿತ</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" data-i18n="tele.button">Find Nearest Health Worker</a>
+                    <a href="#" class="btn btn-primary lang-en">Find Nearest Health Worker</a>
+                    <a href="#" class="btn btn-primary lang-hi" style="display:none;">निकटतम स्वास्थ्य कार्यकर्ता खोजें</a>
+                    <a href="#" class="btn btn-primary lang-kn" style="display:none;">ಹತ್ತಿರದ ಆರೋಗ್ಯ ಕಾರ್ಯಕರ್ತನನ್ನು ಹುಡುಕಿ</a>
                 </div>
                 <div class="telemedicine-image">
                     <img src="https://via.placeholder.com/600x400" alt="Telemedicine with health worker">
@@ -570,229 +677,15 @@
         </section>
         
         <section id="diagnostics">
-            <h2 class="section-title" data-i18n="diag.title">Affordable Diagnostic Centers</h2>
-            <p style="text-align: center; margin-bottom: 20px;" data-i18n="diag.subtitle">We've partnered with local diagnostic centers to provide tests at subsidized rates</p>
+            <h2 class="section-title lang-en">Affordable Diagnostic Centers</h2>
+            <h2 class="section-title lang-hi" style="display:none;">सस्ती डायग्नोस्टिक सेंटर</h2>
+            <h2 class="section-title lang-kn" style="display:none;">ಸಾಧಾರಣ ಬೆಲೆಯ ರೋಗನಿರ್ಣಯ ಕೇಂದ್ರಗಳು</h2>
             
-            <div class="diagnostic-centers">
-                <div class="center-card">
-                    <img src="https://via.placeholder.com/300x150" alt="Diagnostic Center">
-                    <div class="center-info">
-                        <h3>Gramin Diagnostic Center</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="diag.distance">2km from your location</span></p>
-                        <p><i class="fas fa-clock"></i> <span data-i18n="diag.hours">Open today 8AM-8PM</span></p>
-                        <p class="price"><span data-i18n="diag.test1">Malaria Test:</span> ₹60</p>
-                        <button class="btn" data-i18n="diag.book">Book Test</button>
-                    </div>
-                </div>
-                <div class="center-card">
-                    <img src="https://via.placeholder.com/300x150" alt="Diagnostic Center">
-                    <div class="center-info">
-                        <h3>Janata Pathology Lab</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="diag.distance">5km from your location</span></p>
-                        <p><i class="fas fa-clock"></i> <span data-i18n="diag.hours">Open today 9AM-6PM</span></p>
-                        <p class="price"><span data-i18n="diag.test2">Diabetes Test:</span> ₹80</p>
-                        <button class="btn" data-i18n="diag.book">Book Test</button>
-                    </div>
-                </div>
-                <div class="center-card">
-                    <img src="https://via.placeholder.com/300x150" alt="Diagnostic Center">
-                    <div class="center-info">
-                        <h3>Community Health Center</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="diag.distance">3km from your location</span></p>
-                        <p><i class="fas fa-clock"></i> <span data-i18n="diag.hours">Open today 8AM-4PM</span></p>
-                        <p class="price"><span data-i18n="diag.test3">Basic Blood Tests:</span> ₹120</p>
-                        <button class="btn" data-i18n="diag.book">Book Test</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="alerts" class="alerts">
-            <h2 data-i18n="alert.title">Health Alerts in Your Area</h2>
-            <div class="alert-item">
-                <div class="date">June 15, 2023</div>
-                <h3 data-i18n="alert.alert1">Dengue Outbreak Alert</h3>
-                <p data-i18n="alert.desc1">Increased cases reported in your district. Use mosquito nets and report fever symptoms immediately.</p>
-            </div>
-            <div class="alert-item">
-                <div class="date">June 10, 2023</div>
-                <h3 data-i18n="alert.alert2">Vaccination Camp</h3>
-                <p data-i18n="alert.desc2">Free measles vaccination camp at village health center on June 12, 9AM-2PM.</p>
-            </div>
-            <div class="alert-item">
-                <div class="date">June 5, 2023</div>
-                <h3 data-i18n="alert.alert3">Heat Wave Warning</h3>
-                <p data-i18n="alert.desc3">Extreme heat expected next week. Stay hydrated and avoid sun exposure between 11AM-4PM.</p>
-            </div>
-            <button class="btn" data-i18n="alert.subscribe">Subscribe to SMS Alerts</button>
-        </section>
-        
-        <section id="offline" class="offline-options">
-            <div class="container">
-                <h2 data-i18n="offline.title">Access GramHealth Without Internet</h2>
-                <p data-i18n="offline.desc">We provide multiple ways to access healthcare information and services even without smartphone or internet</p>
-                
-                <div class="offline-methods">
-                    <div class="method-card">
-                        <div class="icon">
-                            <i class="fas fa-sms"></i>
-                        </div>
-                        <h3 data-i18n="offline.sms">SMS Service</h3>
-                        <p data-i18n="offline.sms-desc">Send HEALTH to 56161 for menu</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3 data-i18n="offline.ivr">IVR Helpline</h3>
-                        <p data-i18n="offline.ivr-desc">Call 1800-123-4567</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="icon">
-                            <i class="fas fa-broadcast-tower"></i>
-                        </div>
-                        <h3 data-i18n="offline.ussd">USSD Code</h3>
-                        <p data-i18n="offline.ussd-desc">Dial *123#</p>
-                    </div>
-                </div>
-            </div>
+            <p style="text-align: center; margin-bottom: 20px;" class="lang-en">We've partnered with local diagnostic centers to provide tests at subsidized rates</p>
+            <p style="text-align: center; margin-bottom: 20px;" class="lang-hi" style="display:none;">हमने सब्सिडी दरों पर परीक्षण प्रदान करने के लिए स्थानीय डायग्नोस्टिक केंद्रों के साथ साझेदारी की है</p>
+            <p style="text-align: center; margin-bottom: 20px;" class="lang-kn" style="display:none;">ಸಬ್ಸಿಡಿ ದರಗಳಲ್ಲಿ ಪರೀಕ್ಷೆಗಳನ್ನು ಒದಗಿಸಲು ನಾವು ಸ್ಥಳೀಯ ರೋಗನಿರ್ಣಯ ಕೇಂದ್ರಗಳೊಂದಿಗೆ ಪಾಲುದಾರಿಕೆ ಮಾಡಿಕೊಂಡಿದ್ದೇವೆ</p>
         </section>
     </div>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#" data-i18n="footer.about">About Us</a>
-                <a href="#" data-i18n="footer.partners">Our Partners</a>
-                <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
-                <a href="#" data-i18n="footer.terms">Terms of Service</a>
-                <a href="#" data-i18n="footer.contact">Contact Us</a>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="copyright" data-i18n="footer.copyright">
-                &copy; 2023 GramHealth. Developed for rural India.
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Language translation data
-        const translations = {
-            en: {
-                "logo-text": "GramHealth",
-                "nav.symptom": "Symptom Checker",
-                "nav.telemedicine": "Telemedicine",
-                "nav.diagnostics": "Diagnostics",
-                "nav.alerts": "Health Alerts",
-                "nav.offline": "Offline Access",
-                "hero-title": "Affordable Healthcare for Rural India",
-                "hero-subtitle": "Access doctors, diagnostics, and health information in your local language, even without internet",
-                "hero-cta": "Check Symptoms Now",
-                "features.language": "Local Language Support",
-                "features.language-desc": "Available in 10+ Indian languages with voice interaction for those who can't read",
-                "features.offline": "Works Without Internet",
-                "features.offline-desc": "Access via USSD, SMS or offline app. No need for constant internet connection",
-                "features.affordable": "Affordable Diagnostics",
-                "features.affordable-desc": "Low-cost tests starting at ₹50 with our network of local diagnostic centers",
-                "symptom.title": "Symptom Checker",
-                "symptom.label": "Describe your symptoms",
-                "symptom.placeholder": "Example: I have fever, headache and body pain since yesterday",
-                "symptom.voice": "Or use voice input",
-                "symptom.language": "Preferred Language",
-                "symptom.button": "Check Symptoms",
-                "result.condition": "Possible Conditions",
-                "result.action": "Recommended Action",
-                "result.healthcare": "Nearby Healthcare",
-                "result.consult": "Book Teleconsultation",
-                "how.title": "How GramHealth Works",
-                "tele.title": "Telemedicine with Local Health Workers",
-                "tele.desc": "Our network of trained ASHA and ANM workers can help you connect with doctors via video or phone call, even in remote areas.",
-                "tele.bullet1": "Available in your local language",
-                "tele.bullet2": "Basic health checks done by the worker",
-                "tele.bullet3": "E-prescriptions sent via SMS",
-                "tele.bullet4": "Integrated with Ayushman Bharat",
-                "tele.button": "Find Nearest Health Worker",
-                "diag.title": "Affordable Diagnostic Centers",
-                "diag.subtitle": "We've partnered with local diagnostic centers to provide tests at subsidized rates",
-                "diag.distance": "2km from your location",
-                "diag.hours": "Open today 8AM-8PM",
-                "diag.test1": "Malaria Test:",
-                "diag.test2": "Diabetes Test:",
-                "diag.test3": "Basic Blood Tests:",
-                "diag.book": "Book Test",
-                "alert.title": "Health Alerts in Your Area",
-                "alert.alert1": "Dengue Outbreak Alert",
-                "alert.desc1": "Increased cases reported in your district. Use mosquito nets and report fever symptoms immediately.",
-                "alert.alert2": "Vaccination Camp",
-                "alert.desc2": "Free measles vaccination camp at village health center on June 12, 9AM-2PM.",
-                "alert.alert3": "Heat Wave Warning",
-                "alert.desc3": "Extreme heat expected next week. Stay hydrated and avoid sun exposure between 11AM-4PM.",
-                "alert.subscribe": "Subscribe to SMS Alerts",
-                "offline.title": "Access GramHealth Without Internet",
-                "offline.desc": "We provide multiple ways to access healthcare information and services even without smartphone or internet",
-                "offline.sms": "SMS Service",
-                "offline.sms-desc": "Send HEALTH to 56161 for menu",
-                "offline.ivr": "IVR Helpline",
-                "offline.ivr-desc": "Call 1800-123-4567",
-                "offline.ussd": "USSD Code",
-                "offline.ussd-desc": "Dial *123#",
-                "footer.about": "About Us",
-                "footer.partners": "Our Partners",
-                "footer.privacy": "Privacy Policy",
-                "footer.terms": "Terms of Service",
-                "footer.contact": "Contact Us",
-                "footer.copyright": "© 2023 GramHealth. Developed for rural India."
-            },
-            hi: {
-                "logo-text": "ग्रामहेल्थ",
-                "nav.symptom": "लक्षण जांच",
-                "nav.telemedicine": "टेलीमेडिसिन",
-                "nav.diagnostics": "डायग्नोस्टिक्स",
-                "nav.alerts": "स्वास्थ्य चेतावनी",
-                "nav.offline": "ऑफलाइन पहुंच",
-                "hero-title": "ग्रामीण भारत के लिए सस्ती स्वास्थ्य सेवा",
-                "hero-subtitle": "डॉक्टरों, डायग्नोस्टिक्स और स्वास्थ्य जानकारी तक अपनी स्थानीय भाषा में पहुंचें, इंटरनेट के बिना भी",
-                "hero-cta": "अभी लक्षण जांचें",
-                "features.language": "स्थानीय भाषा समर्थन",
-                "features.language-desc": "10+ भारतीय भाषाओं में उपलब्ध, आवाज इंटरैक्शन के साथ जो पढ़ नहीं सकते उनके लिए",
-                "features.offline": "इंटरनेट के बिना काम करता है",
-                "features.offline-desc": "यूएसएसडी, एसएमएस या ऑफलाइन ऐप के माध्यम से पहुंच। निरंतर इंटरनेट कनेक्शन की आवश्यकता नहीं",
-                "features.affordable": "सस्ती डायग्नोस्टिक्स",
-                "features.affordable-desc": "स्थानीय डायग्नोस्टिक केंद्रों के हमारे नेटवर्क के साथ ₹50 से शुरू होने वाले कम लागत वाले टेस्ट",
-                "symptom.title": "लक्षण जांच",
-                "symptom.label": "अपने लक्षणों का वर्णन करें",
-                "symptom.placeholder": "उदाहरण: मुझे कल से बुखार, सिरदर्द और शरीर में दर्द है",
-                "symptom.voice": "या वॉइस इनपुट का उपयोग करें",
-                "symptom.language": "पसंदीदा भाषा",
-                "symptom.button": "लक्षण जांचें",
-                "result.condition": "संभावित स्थितियां",
-                "result.action": "अनुशंसित कार्रवाई",
-                "result.healthcare": "नजदीकी स्वास्थ्य सेवा",
-                "result.consult": "टेलीकंसल्टेशन बुक करें",
-                "how.title": "ग्रामहेल्थ कैसे काम करता है",
-                "tele.title": "स्थानीय स्वास्थ्य कार्यकर्ताओं के साथ टेलीमेडिसिन",
-                "tele.desc": "हमारे प्रशिक्षित आशा और एएनएम कार्यकर्ताओं का नेटवर्क आपको डॉक्टरों से वीडियो या फोन कॉल के माध्यम से जोड़ने में मदद कर सकता है, यहां तक कि दूरदराज के इलाकों में भी।",
-                "tele.bullet1": "आपकी स्थानीय भाषा में उपलब्ध",
-                "tele.bullet2": "कार्यकर्ता द्वारा किए गए बुनियादी स्वास्थ्य जांच",
-                "tele.bullet3": "एसएमएस के माध्यम से भेजे गए ई-प्रिस्क्रिप्शन",
-                "tele.bullet4": "आयुष्मान भारत के साथ एकीकृत",
-                "tele.button": "नजदीकी स्वास्थ्य कार्यकर्ता खोजें",
-                "diag.title": "सस्ती डायग्नोस्टिक केंद्र",
-                "diag.subtitle": "हमने सब्सिडी दरों पर टेस्ट प्रदान करने के लिए स्थानीय डायग्नोस्टिक केंद्रों के साथ साझेदारी की है",
-                "diag.distance": "आपके स्थान से 2 किमी दूर",
-                "diag.hours": "आज खुला है सुबह 8 बजे से रात 8 बजे तक",
-                "diag.test1": "मलेरिया टेस्ट:",
-                "diag.test2": "डायबिटीज टेस्ट:",
-                "diag.test3": "बेसिक ब्लड टेस्ट:",
-                "diag.book": "टेस्ट बुक करें",
-                "alert.title": "आपके क्षेत्र में स्वास्थ्य चेतावनी",
-                "alert.alert1": "डेंगू प्रकोप चेतावनी",
-                "alert.desc1": "आपके जिले में मामलों में वृद्धि की सूच"
-                    </script>
 </body>
 </html>
+
